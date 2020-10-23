@@ -55,8 +55,8 @@ who compiled and installed your kernel.  Or better yet, go to the web
 site, and learn how to patch Speakup into your own kernel source, and
 build and install your own kernel.
 
-If your kernel has been compiled with Speakup, and has no default
-synthesizer set, or you would like to use a different synthesizer than
+If your kernel has been compiled with Speakup and has no default
+synthesizer set or you would like to use a different synthesizer than
 the default one, then you may issue the following command at the boot
 prompt of your boot loader.
 
@@ -115,9 +115,9 @@ screen using the kernel, and must get their keyboard input through the
 kernel, they are automatically handled properly by Speakup.  There are a
 few exceptions, but we'll come to those later.
 
-Note:  In this guide I will refer to the numeric keypad as the keypad.
+Note:  In this guide, I will refer to the numeric keypad as the keypad.
 This is done because the speakupmap.map file referred to later in this
-manual uses the term keypad instead of numeric keypad.  Also I'm lazy
+manual uses the term keypad instead of a numeric keypad. Also, I'm lazy
 and would rather only type one word.  So keypad it is.  Got it?  Good.
 
 Most of the Speakup review keys are located on the keypad at the far
@@ -138,12 +138,12 @@ dmesg | more
 In order to speed the boot process, and to silence the speaking of the
 bootup messages, just press the keypad enter key.  This key is located
 in the bottom right corner of the keypad.  Speakup will shut up and stay
-that way, until you press another key.
+that way until you press another key.
 
 You can check to see if the boot process has completed by pressing the 8
 key on the keypad, which reads the current line.  This also has the
 effect of starting Speakup talking again, so you can press keypad enter
-to silence it again if the boot process has not completed.
+to silence it again if the boot process has not been completed.
 
 When the boot process is complete, you will arrive at a "login" prompt.
 At this point, you'll need to type in your user id and password, as
@@ -197,7 +197,7 @@ key (remember that this is the keypad insert key), and press the f1 key.
 You will hear the message:
 
 "Press space to leave help, cursor up or down to scroll, or a letter to
-go to commands in list."
+go to commands in the list."
 
 When you press the spacebar to leave the help system, you will hear:
 
@@ -223,7 +223,7 @@ in this manual.
 You'll also notice that some commands have two keys assigned to them.
 This is because Speakup has a built in set of alternative key bindings
 for laptop users.  The alternate speakup key is the caps lock key.  You
-can press and hold the caps lock key, while pressing an alternate
+can press and hold the caps lock key while pressing an alternate
 speakup command key to activate the command.  On most laptops, the
 numeric keypad is defined as the keys in the j k l area of the keyboard.
 
@@ -231,7 +231,7 @@ There is usually a function key which turns this keypad function on and
 off, and some other key which controls the numlock state.  Toggling the
 keypad functionality on and off can become a royal pain.  So, Speakup
 gives you a simple way to get at an alternative set of key mappings for
-your laptop.  These are also available by default on desktop systems,
+your laptop.  These are also available by default on desktop systems
 because Speakup does not know whether it is running on a desktop or
 laptop.  So you may choose which set of Speakup keys to use.  Some
 system administrators may have chosen to compile Speakup for a desktop
@@ -426,7 +426,7 @@ These parameters include volume, rate, pitch, and others.
 
 In addition to using the Speakup hot keys to change such things as
 volume, pitch, and rate, you can also echo values to the appropriate
-entry in the /speakup directory.  This is very useful, since it
+entry in the /speakup directory.  This is very useful since it
 lets you control Speakup parameters from within a script.  How you
 would write such scripts is somewhat beyond the scope of this manual,
 but I will include a couple of simple examples here to give you a
@@ -520,7 +520,7 @@ writable by root only, and some are writable by everyone.  Unless you
 know what you are doing, you should probably leave the ones that are
 writable by root only alone.  Most of the names are self explanatory.
 Vol for controlling volume, pitch for pitch, inflection for pitch range, rate
-for controlling speaking rate, etc.  If you find one you aren't sure about, you
+for controlling the speaking rate, etc.  If you find one you aren't sure about, you
 can post a query on the Speakup list.
 
 6.  Changing Synthesizers
@@ -543,7 +543,7 @@ kernel, with the exception of the help module, or it can be compiled as
 a series of modules.   When compiled as modules, Speakup will only be
 able to speak some of the bootup messages if your system administrator
 has configured the system to load the modules at boo time. The modules
-can  be loaded after the file systems have been checked and mounted, or
+can be loaded after the file systems have been checked and mounted, or
 from an initrd.  There is a third possibility.  Speakup can be compiled
 with some components built into the kernel, and others as modules.  As
 we'll see in the next section, this is particularly useful when you are
@@ -609,9 +609,9 @@ Speech Dispatcher.
 These are described in subsections 8.1 and 8.2, respectively.
 
 During the rest of this section, we assume that speakup_soft is either
-built in to your kernel, or loaded as a module.
+built into your kernel, or loaded as a module.
 
-If your system does not have udev installed , before you can use a
+If your system does not have udev installed before you can use a
 software synthesizer, you must have created the /dev/softsynth device.
 If you have not already done so, issue the following commands as root:
 
@@ -695,7 +695,7 @@ echo the soft keyword to the synth sys entry like this:
 
 echo soft >/speakup/synth
 
-Next run the speechd_up command like this:
+Next, run the speechd_up command like this:
 
 speechd_up &
 
@@ -706,7 +706,7 @@ the pitch, rate, etc.
 
 The DecTalk PC card is an ISA card that is inserted into one of the ISA
 slots in your computer.  It requires that the DecTalk PC software be
-installed on your computer, and that the software be loaded onto the
+installed on your computer and that the software be loaded onto the
 Dectalk PC card before it can be used.
 
 You can get the dec_pc.tgz file from the linux-speakup.org site.  The
@@ -764,7 +764,7 @@ rather than the cursor itself. When you move the cursor with the arrow keys,
 Speakup speaks the currently highlighted information.
 This is useful when moving through various menus and dialog boxes.
 If cursor tracking isn't helping you while navigating a menu,
-try highlight tracking.
+try to highlight tracking.
 
 With the "read window" variety of cursor tracking, you can limit the text
 that Speakup speaks by specifying a window of interest on the screen.
@@ -804,7 +804,7 @@ running on a different console.
 For example, in this manual, we have made references to several web
 sites.  It would be nice if you could cut and paste these urls into your
 web browser.  Speakup does this quite nicely.  Suppose you wanted to
-past the following url into your browser:
+pass the following url into your browser:
 
 http://linux-speakup.org/
 
@@ -887,7 +887,7 @@ like in DOS, or at the Windows command prompt.
 
 And finally, /speakup/i18n/characters is the file entry in the sys system
 where we want the output to be directed.  Speakup looks at the numeric
-value of the character we want to change, and inserts the pronunciation
+value of the character we want to change and inserts the pronunciation
 string into an internal table.
 
 You can look at the whole table with the following command:
@@ -911,7 +911,7 @@ processing keymaps is in the
 <version_number> in the above directory path is the version number of
 the Linux source tree you are working with.
 
-So ok, you've gone off and gotten your kernel source tree, and patched
+So ok, you've gone off and gotten your kernel source tree and patched
 and configured it.  Now you can start manipulating keymaps.
 
 You can either use the
@@ -1007,7 +1007,7 @@ say_control feature.
 
 * formatted:
 This group of messages contains embedded formatting codes, to specify
-the type and width of displayed data.  If you change these, you must
+the type and width of the displayed data.  If you change these, you must
 preserve all of the formatting codes, and they must appear in the order
 used by the default messages.
 
@@ -1200,7 +1200,7 @@ complements the GNU General Public License, which is a copyleft
 license designed for free software.
 
 We have designed this License in order to use it for manuals for free
-software, because free software needs free documentation: a free
+software because free software needs free documentation: a free
 program should come with manuals providing the same freedoms that the
 software does.  But this License is not limited to software manuals;
 it can be used for any textual work, regardless of subject matter or

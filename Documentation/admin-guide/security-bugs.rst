@@ -58,7 +58,7 @@ reporter.  This includes but is not limited to the original bug report
 and followup discussions (if any), exploits, CVE information or the
 identity of the reporter.
 
-In other words our only interest is in getting bugs fixed.  All other
+In other words, our only interest is in getting bugs fixed.  All other
 information submitted to the security list and any followup discussions
 of the report are treated confidentially even after the embargo has been
 lifted, in perpetuity.
@@ -67,15 +67,15 @@ Coordination
 ------------
 
 Fixes for sensitive bugs, such as those that might lead to privilege
-escalations, may need to be coordinated with the private
+escalations may need to be coordinated with the private
 <linux-distros@vs.openwall.org> mailing list so that distribution vendors
-are well prepared to issue a fixed kernel upon public disclosure of the
+are well prepared to issue a fixed kernel upon the public disclosure of the
 upstream fix. Distros will need some time to test the proposed patch and
 will generally request at least a few days of embargo, and vendor update
 publication prefers to happen Tuesday through Thursday. When appropriate,
 the security team can assist with this coordination, or the reporter can
 include linux-distros from the start. In this case, remember to prefix
-the email Subject line with "[vs]" as described in the linux-distros wiki:
+the email subject line with "[vs]" as described in the linux-distros wiki:
 <http://oss-security.openwall.org/wiki/mailing-lists/distros#how-to-use-the-lists>
 
 CVE assignment

@@ -7,8 +7,8 @@ The SGI XFS Filesystem
 XFS is a high performance journaling filesystem which originated
 on the SGI IRIX platform.  It is completely multi-threaded, can
 support large files and large filesystems, extended attributes,
-variable block sizes, is extent based, and makes extensive use of
-Btrees (directories, extents, free space) to aid both performance
+variable block sizes are extent based and makes extensive use of
+Btrees (directories, extents, free space) to aid both performances
 and scalability.
 
 Refer to the documentation at https://xfs.wiki.kernel.org/

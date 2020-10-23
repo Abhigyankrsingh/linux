@@ -4,7 +4,7 @@
  USB4 and Thunderbolt
 ======================
 USB4 is the public specification based on Thunderbolt 3 protocol with
-some differences at the register level among other things. Connection
+some differences at the register level among other things. The connection
 manager is an entity running on the host router (host controller)
 responsible for enumerating routers and establishing tunnels. A
 connection manager can be implemented either in firmware or software.
@@ -23,9 +23,9 @@ is expected to be accompanied with an IOMMU based DMA protection.
 
 Security levels and how to use them
 -----------------------------------
-The interface presented here is not meant for end users. Instead there
+The interface presented here is not meant for end users. Instead, there
 should be a userspace tool that handles all the low-level details, keeps
-a database of the authorized devices and prompts users for new connections.
+a database of the authorized devices, and prompts users for new connections.
 
 More details about the sysfs interface for Thunderbolt devices can be
 found in ``Documentation/ABI/testing/sysfs-bus-thunderbolt``.
@@ -146,7 +146,7 @@ device using the same key::
 
 If the challenge the device returns back matches the one we expect based
 on the key, the device is connected and the PCIe tunnels are created.
-However, if the challenge fails no tunnels are created and error is
+However, if the challenge fails no tunnels are created and an error is
 returned to the user.
 
 If the user still wants to connect the device they can either approve
@@ -185,7 +185,7 @@ for some machines:
 
   `Thunderbolt Updates <https://thunderbolttechnology.net/updates>`_
 
-Before you upgrade firmware on a device, host or retimer, please make
+Before you upgrade the firmware on a device, host, or retimer, please make
 sure it is a suitable upgrade. Failing to do that may render the device
 in a state where it cannot be used properly anymore without special
 tools!
@@ -201,7 +201,7 @@ Note an OEM-specific method to power the controller up ("force power") may
 be available for your system in which case there is no need to plug in a
 Thunderbolt device.
 
-After that we can write the firmware to the non-active parts of the NVM
+After that, we can write the firmware to the non-active parts of the NVM
 of the host or device. As an example here is how Intel NUC6i7KYK (Skull
 Canyon) Thunderbolt controller NVM is upgraded::
 
@@ -214,7 +214,7 @@ upgrade process as follows::
 
 If no errors are returned, the host controller shortly disappears. Once
 it comes back the driver notices it and initiates a full power cycle.
-After a while the host controller appears again and this time it should
+After a while, the host controller appears again and this time it should
 be fully functional.
 
 We can verify that the new NVM firmware is active by running the following
@@ -250,7 +250,7 @@ Thunderbolt technology allows software communication between two hosts
 connected by a Thunderbolt cable.
 
 It is possible to tunnel any kind of traffic over a Thunderbolt link but
-currently we only support Apple ThunderboltIP protocol.
+currently, we only support Apple ThunderboltIP protocol.
 
 If the other host is running Windows or macOS, the only thing you need to
 do is to connect a Thunderbolt cable between the two hosts; the
@@ -260,11 +260,11 @@ does not matter which one)::
 
   # modprobe thunderbolt-net
 
-This triggers module load on the other host automatically. If the driver
+This triggers the module load on the other host automatically. If the driver
 is built-in to the kernel image, there is no need to do anything.
 
 The driver will create one virtual ethernet interface per Thunderbolt
-port which are named like ``thunderbolt0`` and so on. From this point
+port which is named like ``thunderbolt0`` and so on. From this point,
 you can either use standard userspace tools like ``ifconfig`` to
 configure the interface or let your GUI handle it automatically.
 

@@ -12,7 +12,7 @@ regardless of whatever else it is doing, unless it is completely locked up.
 How do I enable the magic SysRq key?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You need to say "yes" to 'Magic SysRq key (CONFIG_MAGIC_SYSRQ)' when
+You need to say "yes" to the 'Magic SysRq key (CONFIG_MAGIC_SYSRQ)' when
 configuring the kernel. When running a kernel with SysRq compiled in,
 /proc/sys/kernel/sysrq controls the functions allowed to be invoked via
 the SysRq key. The default value in this file is set by the
@@ -54,9 +54,9 @@ On x86
 	.. note::
 	   Some
            keyboards may not have a key labeled 'SysRq'. The 'SysRq' key is
-           also known as the 'Print Screen' key. Also some keyboards cannot
+           also known as the 'Print Screen' key. Also, some keyboards cannot
 	   handle so many keys being pressed at the same time, so you might
-	   have better luck with press :kbd:`Alt`, press :kbd:`SysRq`,
+	   have better luck with the press :kbd:`Alt`, press :kbd:`SysRq`,
 	   release :kbd:`SysRq`, press :kbd:`<command key>`, release everything.
 
 On SPARC
@@ -160,8 +160,8 @@ Okay, so what can I use them for?
 Well, unraw(r) is very handy when your X server or a svgalib program crashes.
 
 sak(k) (Secure Access Key) is useful when you want to be sure there is no
-trojan program running at console which could grab your password
-when you would try to login. It will kill all programs on given console,
+trojan program running at the console which could grab your password
+when you would try to login. It will kill all programs on a given console,
 thus letting you make sure that the login prompt you see is actually
 the one from init, not some trojan program.
 

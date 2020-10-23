@@ -29,9 +29,9 @@ Libsmbios can also be used to update BIOS on Dell systems go to
 https://linux.dell.com/libsmbios/ for details.
 
 Dell_RBU driver supports BIOS update using the monolithic image and packetized
-image methods. In case of monolithic the driver allocates a contiguous chunk
-of physical pages having the BIOS image. In case of packetized the app
-using the driver breaks the image in to packets of fixed sizes and the driver
+image methods. In the case of monolithic, the driver allocates a contiguous chunk
+of physical pages having the BIOS image. In the case of packetized the app
+using the driver breaks the image into packets of fixed sizes and the driver
 would place each packet in contiguous physical memory. The driver also
 maintains a link list of packets for reading them back.
 
@@ -51,15 +51,15 @@ The driver load creates the following directories under the /sys file system::
 	/sys/devices/platform/dell_rbu/data
 	/sys/devices/platform/dell_rbu/packet_size
 
-The driver supports two types of update mechanism; monolithic and packetized.
+The driver supports two types of update mechanisms; monolithic and packetized.
 These update mechanism depends upon the BIOS currently running on the system.
 Most of the Dell systems support a monolithic update where the BIOS image is
 copied to a single contiguous block of physical memory.
 
-In case of packet mechanism the single memory can be broken in smaller chunks
+In the case of the packet mechanism, the single memory can be broken into smaller chunks
 of contiguous memory and the BIOS image is scattered in these packets.
 
-By default the driver uses monolithic memory for the update type. This can be
+By default, the driver uses monolithic memory for the update type. This can be
 changed to packets during the driver load time by specifying the load
 parameter image_type=packet.  This can also be changed later as below::
 
@@ -86,7 +86,7 @@ space.
 
 This method makes sure that all the packets get to the driver in a single operation.
 
-In monolithic update the user simply get the BIOS image (.hdr file) and copies
+In monolithic update, the user simply gets the BIOS image (.hdr file) and copies
 to the data file as is without any change to the BIOS image itself.
 
 Do the steps below to download the BIOS image.
@@ -104,7 +104,7 @@ done.
 
 Until this step is completed the driver cannot be unloaded.
 
-Also echoing either mono, packet or init in to image_type will free up the
+Also echoing either mono, packet, or init into image_type will free up the
 memory allocated by the driver.
 
 If a user by accident executes steps 1 and 3 above without executing step 2;
@@ -122,7 +122,6 @@ read back the image downloaded.
 .. note::
 
    After updating the BIOS image a user mode application needs to execute
-   code which sends the BIOS update request to the BIOS. So on the next reboot
+   code which sends the BIOS update request to the BIOS. So on the next reboot,
    the BIOS knows about the new image downloaded and it updates itself.
    Also don't unload the rbu driver if the image has to be updated.
-

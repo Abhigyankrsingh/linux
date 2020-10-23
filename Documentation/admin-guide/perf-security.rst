@@ -72,19 +72,19 @@ monitoring and observability operations, thus, bypass *scope* permissions
 checks in the kernel. CAP_PERFMON implements the principle of least
 privilege [13]_ (POSIX 1003.1e: 2.2.2.39) for performance monitoring and
 observability operations in the kernel and provides a secure approach to
-perfomance monitoring and observability in the system.
+performance monitoring and observability in the system.
 
 For backward compatibility reasons the access to perf_events monitoring and
-observability operations is also open for CAP_SYS_ADMIN privileged
+observability operations are also open for CAP_SYS_ADMIN privileged
 processes but CAP_SYS_ADMIN usage for secure monitoring and observability
-use cases is discouraged with respect to the CAP_PERFMON capability.
+use cases are discouraged with respect to the CAP_PERFMON capability.
 If system audit records [14]_ for a process using perf_events system call
-API contain denial records of acquiring both CAP_PERFMON and CAP_SYS_ADMIN
+API contains denial records of acquiring both CAP_PERFMON and CAP_SYS_ADMIN
 capabilities then providing the process with CAP_PERFMON capability singly
 is recommended as the preferred secure approach to resolve double access
-denial logging related to usage of performance monitoring and observability.
+denial logging related to the usage of performance monitoring and observability.
 
-Unprivileged processes using perf_events system call are also subject
+Unprivileged processes using perf_events system calls are also subject
 for PTRACE_MODE_READ_REALCREDS ptrace access mode check [7]_ , whose
 outcome determines whether monitoring is permitted. So unprivileged
 processes provided with CAP_SYS_PTRACE capability are effectively
@@ -146,7 +146,7 @@ it uses for the perf ring buffer, see the memory allocation section below.
 
 Using a libcap without support for CAP_PERFMON will make cap_get_flag(caps, 38,
 CAP_EFFECTIVE, &val) fail, which will lead the default event to be 'cycles:u',
-so as a workaround explicitly ask for the 'cycles' event, i.e.:
+so as a workaround explicitly asks for the 'cycles' event, i.e.:
 
 ::
 
@@ -155,11 +155,11 @@ so as a workaround explicitly ask for the 'cycles' event, i.e.:
 To get kernel and user samples with a perf binary with just CAP_PERFMON.
 
 As a result, members of perf_users group are capable of conducting
-performance monitoring and observability by using functionality of the
+performance monitoring and observability by using the functionality of the
 configured Perf tool executable that, when executes, passes perf_events
 subsystem scope checks.
 
-This specific access control management is only available to superuser
+This specific access control management is only available to the superuser
 or root running processes with CAP_SETPCAP, CAP_SETFCAP [6]_
 capabilities.
 
@@ -214,9 +214,9 @@ accountable resource governed by the RLIMIT_NOFILE [11]_ limit
 configuring Perf collection for a long list of events on a large server
 system, this limit can be easily hit preventing required monitoring
 configuration. RLIMIT_NOFILE limit can be increased on per-user basis
-modifying content of the limits.conf file [12]_ . Ordinarily, a Perf
+modifying the content of the limits.conf file [12]_ . Ordinarily, a Perf
 sampling session (perf record) requires an amount of open perf_event
-file descriptors that is not less than the number of monitored events
+file descriptors that are not less than the number of monitored events
 multiplied by the number of monitored CPUs.
 
 Memory allocation
